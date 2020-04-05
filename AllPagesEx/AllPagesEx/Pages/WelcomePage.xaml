@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AllPagesEx.Pages.WelcomePage">
+
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="StatesList">
+            <ContentPage.Content>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="This is Master" HorizontalOptions="CenterAndExpand"/>
+                    <Image Source="icon.png" HeightRequest="100" WidthRequest="100"/>
+
+                    <ListView x:Name="lbxStatesList" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="{ Binding StateIcon}" WidthRequest="50" HeightRequest="50"/>
+                                            <Label Text="{Binding StateName}" VerticalOptions="CenterAndExpand" TextColor="Black"/>
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    
+</MasterDetailPage>
